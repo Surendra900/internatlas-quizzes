@@ -1,7 +1,7 @@
 import type { Quiz, QuizSubmission, LeaderboardEntry } from '../types/quiz';
 import { INITIAL_QUIZZES, MOCK_LEADERBOARD } from '../data/mockQuizzes';
 
-const QUIZZES_KEY = 'internatlas_quizzes';
+const QUIZZES_KEY = 'internatlas_quizzes_v2';
 const SUBMISSIONS_KEY = 'internatlas_submissions';
 const LEADERBOARD_KEY = 'internatlas_leaderboards';
 
@@ -22,6 +22,17 @@ export const quizService = {
   getQuizById(id: string): Quiz | undefined {
     const quizzes = this.getQuizzes();
     return quizzes.find(q => q.id === id);
+  },
+
+  toggleBookmark(quizId: string): Quiz[] {
+    const quizzes = this.getQuizzes().map(q => {
+      if (q.id === quizId) {
+        return { ...q, isBookmarked: !q.isBookmarked };
+      }
+      return q;
+    });
+    localStorage.setItem(QUIZZES_KEY, JSON.stringify(quizzes));
+    return quizzes;
   },
 
   saveQuiz(newQuiz: Quiz): void {
@@ -85,7 +96,7 @@ export const quizService = {
     const timeFormatted = `${minutes}m ${seconds.toString().padStart(2, '0')}s`;
 
     const userEntry: LeaderboardEntry = {
-      rank: 1, // will calculate
+      rank: 1,
       userId: 'user-surendra',
       userName: 'Surendra G (You)',
       avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=faces',
@@ -97,17 +108,14 @@ export const quizService = {
     };
 
     let board: LeaderboardEntry[] = [...MOCK_LEADERBOARD];
-    // remove existing user entry if present
     board = board.filter(b => b.userId !== 'user-surendra');
     board.push(userEntry);
 
-    // Sort by score desc, then time asc
     board.sort((a, b) => {
       if (b.score !== a.score) return b.score - a.score;
       return a.accuracy > b.accuracy ? -1 : 1;
     });
 
-    // Reassign ranks
     board = board.map((entry, idx) => ({
       ...entry,
       rank: idx + 1,

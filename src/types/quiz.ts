@@ -27,8 +27,21 @@ export interface Question {
   marks: number;
 }
 
+export interface QuizRound {
+  roundNumber: number;
+  title: string;
+  type: 'Online Quiz' | 'Coding Assessment' | 'Interview Round';
+  duration: string;
+  questionsCount?: number;
+  description: string;
+  status: 'Open' | 'Upcoming' | 'Completed';
+}
+
 export interface QuizReward {
   prizePool?: string;
+  firstPrize?: string;
+  secondPrize?: string;
+  thirdPrize?: string;
   certificate: boolean;
   badge?: string;
   fastTrackInterview?: boolean;
@@ -45,22 +58,29 @@ export interface Quiz {
   reward: QuizReward;
   status: QuizStatus;
   participantsCount: number;
-  company?: {
+  bannerUrl: string;
+  company: {
     name: string;
     logoText?: string;
     verified: boolean;
+    location?: string;
   };
-  startDate?: string;
-  endsAt?: string;
+  entryFee: string; // 'Free' or '₹99'
+  schedule: string; // '15 - 20 Sep 2026'
+  registrationDeadline: string;
+  eligibility: string;
+  rules: string[];
+  rounds: QuizRound[];
   tags: string[];
   questions: Question[];
+  isBookmarked?: boolean;
 }
 
 export interface QuizSubmission {
   quizId: string;
   userId: string;
   userName: string;
-  answers: Record<string, string>; // questionId -> optionId
+  answers: Record<string, string>;
   score: number;
   totalPossibleScore: number;
   accuracy: number;

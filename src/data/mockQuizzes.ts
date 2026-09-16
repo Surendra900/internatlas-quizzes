@@ -3,26 +3,67 @@ import type { Quiz } from '../types/quiz';
 export const INITIAL_QUIZZES: Quiz[] = [
   {
     id: 'quiz-fullstack-2026',
-    title: 'Full Stack Engineering Hiring Assessment 2026',
-    description: 'Comprehensive evaluation covering React 19 concurrency, Node.js event loop, SQL transaction isolation levels, and REST API design patterns.',
+    title: 'Full Stack Engineering Hiring Sprint 2026',
+    description: 'Comprehensive hiring evaluation for high-growth tech companies covering React 19, Node.js concurrency, PostgreSQL transaction isolation, and RESTful system architecture.',
     category: 'fullstack',
     difficulty: 'Intermediate',
     durationMinutes: 15,
     totalMarks: 50,
+    bannerUrl: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=80',
     reward: {
       prizePool: '₹35,000 Cash Pool',
+      firstPrize: '₹20,000 + Direct Interview',
+      secondPrize: '₹10,000 + Certificate',
+      thirdPrize: '₹5,000 + Swag Kit',
       certificate: true,
-      badge: 'InternAtlas Full Stack Star',
+      badge: 'InternAtlas Full Stack Fellow',
       fastTrackInterview: true
     },
     status: 'live',
+    entryFee: 'Free',
+    schedule: '15 - 20 Sep 2026',
+    registrationDeadline: '20 Sep 2026, 11:59 PM',
+    eligibility: 'Open to all Engineering & CS Students (Graduation: 2025, 2026, 2027)',
+    rules: [
+      'The assessment is timed (15 minutes). Once started, the timer cannot be paused.',
+      'Single-choice questions covering full stack fundamentals with immediate evaluation.',
+      'No negative marking is applied for incorrect attempts in Round 1.',
+      'Top 10% performers on the national leaderboard qualify for Round 2 Technical Interviews.'
+    ],
+    rounds: [
+      {
+        roundNumber: 1,
+        title: 'Preliminary Technical Screening Quiz',
+        type: 'Online Quiz',
+        duration: '15 Mins',
+        questionsCount: 5,
+        description: 'Timed MCQs testing JavaScript event loop, React 19 useTransition, SQL transactions, and HTTP status codes.',
+        status: 'Open'
+      },
+      {
+        roundNumber: 2,
+        title: 'Full Stack Architecture & API Coding Round',
+        type: 'Coding Assessment',
+        duration: '90 Mins',
+        description: 'Take-home mini full stack feature build with automated unit test verification.',
+        status: 'Upcoming'
+      },
+      {
+        roundNumber: 3,
+        title: 'Partner Company Technical Interview',
+        type: 'Interview Round',
+        duration: '45 Mins',
+        description: '1-on-1 discussion with engineering leads from participating tech hiring partners.',
+        status: 'Upcoming'
+      }
+    ],
     participantsCount: 1420,
     company: {
       name: 'AtlasTech Labs',
       logoText: 'AT',
-      verified: true
+      verified: true,
+      location: 'Bengaluru / Remote'
     },
-    endsAt: '2026-09-20T23:59:59Z',
     tags: ['React', 'Node.js', 'PostgreSQL', 'System Design', 'Hiring'],
     questions: [
       {
@@ -118,25 +159,57 @@ console.log(obj.getCount(), obj.getRegularCount());`,
   },
   {
     id: 'quiz-dsa-sprint',
-    title: 'Data Structures & Algorithms National Sprint',
-    description: 'Test your algorithmic agility with time complexity, dynamic programming, tree traversals, and graph algorithms curated by ex-FAANG engineers.',
+    title: 'DSA & Algorithmic Problem Solving National Sprint',
+    description: 'Battle-tested challenge on dynamic programming, graph traversal (Dijkstra, BFS), AVL tree balancing, and amortized complexity bounds.',
     category: 'dsa',
     difficulty: 'Advanced',
     durationMinutes: 20,
     totalMarks: 40,
+    bannerUrl: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80',
     reward: {
       prizePool: '₹50,000 Cash Pool',
+      firstPrize: '₹30,000 Cash Prize',
+      secondPrize: '₹15,000 Cash Prize',
+      thirdPrize: '₹5,000 Cash Prize',
       certificate: true,
-      badge: 'DSA Master Medal'
+      badge: 'DSA National Master'
     },
     status: 'live',
+    entryFee: 'Free',
+    schedule: '16 - 24 Sep 2026',
+    registrationDeadline: '24 Sep 2026, 06:00 PM',
+    eligibility: 'Open to All College Students Across India',
+    rules: [
+      'Strict 20-minute timed quiz format with immediate automated scoring.',
+      'Algorithm analysis and complexity questions curated by competitive programmers.',
+      'National leaderboard ranks determined by highest marks followed by least time taken.'
+    ],
+    rounds: [
+      {
+        roundNumber: 1,
+        title: 'Core DSA Conceptual Assessment',
+        type: 'Online Quiz',
+        duration: '20 Mins',
+        questionsCount: 4,
+        description: 'High-speed problem analysis focusing on algorithmic paradigms and asymptotic complexity.',
+        status: 'Open'
+      },
+      {
+        roundNumber: 2,
+        title: 'Live Competitive Coding Sprint',
+        type: 'Coding Assessment',
+        duration: '120 Mins',
+        description: 'Solve 3 hard algorithmic problems on arrays, graphs, and dynamic programming.',
+        status: 'Upcoming'
+      }
+    ],
     participantsCount: 2840,
     company: {
       name: 'CodeCraft India',
       logoText: 'CC',
-      verified: true
+      verified: true,
+      location: 'Hyderabad / Online'
     },
-    endsAt: '2026-09-22T18:00:00Z',
     tags: ['Algorithms', 'Dynamic Programming', 'Graph Theory', 'Trees'],
     questions: [
       {
@@ -195,23 +268,46 @@ console.log(obj.getCount(), obj.getRegularCount());`,
   },
   {
     id: 'quiz-aptitude-campus',
-    title: 'Top Tier Campus Placement Aptitude Assessment',
-    description: 'Prepare for tier-1 company selection tests (TCS, Infosys, Google, Amazon campus drives) covering Quantitative, Logical Reasoning, and Data Interpretation.',
+    title: 'Tier-1 Campus Placement Aptitude Assessment',
+    description: 'Prepare for tier-1 company selection tests (TCS Digital, Infosys SP, Google, Amazon campus drives) covering Quantitative, Logical Reasoning, and Data Interpretation.',
     category: 'aptitude',
     difficulty: 'Beginner',
     durationMinutes: 10,
     totalMarks: 30,
+    bannerUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=80',
     reward: {
-      prizePool: '₹15,000 Pool',
+      prizePool: '₹15,000 Cash Pool',
+      firstPrize: '₹10,000 Cash',
+      secondPrize: '₹5,000 Cash',
       certificate: true,
-      badge: 'Logic Ace'
+      badge: 'Logic Ace Medal'
     },
     status: 'live',
+    entryFee: 'Free',
+    schedule: '15 - 28 Sep 2026',
+    registrationDeadline: '28 Sep 2026, 11:59 PM',
+    eligibility: 'All Engineering, BCA, BSc, and MCA Graduates',
+    rules: [
+      '10-minute sprint test covering quantitative arithmetic, coding-decoding, and work-rate calculations.',
+      'Instant verified score report formatted for placement cell verification.'
+    ],
+    rounds: [
+      {
+        roundNumber: 1,
+        title: 'General Aptitude & Reasoning Sprint',
+        type: 'Online Quiz',
+        duration: '10 Mins',
+        questionsCount: 3,
+        description: 'Timed quantitative aptitude and logical deduction test.',
+        status: 'Open'
+      }
+    ],
     participantsCount: 4190,
     company: {
-      name: 'InternAtlas Careers',
+      name: 'InternAtlas Placement Cell',
       logoText: 'IA',
-      verified: true
+      verified: true,
+      location: 'Pan-India / Virtual'
     },
     tags: ['Aptitude', 'Reasoning', 'Campus Prep', 'Math'],
     questions: [
@@ -258,23 +354,46 @@ console.log(obj.getCount(), obj.getRegularCount());`,
   },
   {
     id: 'quiz-react-mastery',
-    title: 'Modern Frontend & React 19 Deep Dive',
-    description: 'Evaluate your command of modern web vitals, hydration errors, server actions, client boundaries, and custom hook composition.',
+    title: 'Modern Frontend & React 19 Architecture Challenge',
+    description: 'Master Core Web Vitals (CLS, INP, LCP), hydration mismatch prevention, React Server Actions, and performant state orchestration.',
     category: 'frontend',
     difficulty: 'Intermediate',
     durationMinutes: 12,
     totalMarks: 30,
+    bannerUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=80',
     reward: {
       prizePool: '₹20,000 Bounty',
+      firstPrize: '₹15,000 Cash',
+      secondPrize: '₹5,000 Cash',
       certificate: true,
       badge: 'React Artisan'
     },
     status: 'practice',
+    entryFee: 'Free',
+    schedule: 'Self-Paced Practice',
+    registrationDeadline: 'Open Forever',
+    eligibility: 'Frontend engineers and React developers looking to level up.',
+    rules: [
+      'Self-paced assessment with detailed answer explanations.',
+      'Test your understanding of modern React 19 hooks and web vitals.'
+    ],
+    rounds: [
+      {
+        roundNumber: 1,
+        title: 'React 19 & Web Architecture Quiz',
+        type: 'Online Quiz',
+        duration: '12 Mins',
+        questionsCount: 3,
+        description: 'MCQs on React 19 features, Server Components, and Web Vitals.',
+        status: 'Open'
+      }
+    ],
     participantsCount: 980,
     company: {
       name: 'Veloce UI Studio',
       logoText: 'VU',
-      verified: true
+      verified: true,
+      location: 'Pune / Remote'
     },
     tags: ['React 19', 'Next.js', 'Core Web Vitals', 'Hooks'],
     questions: [
@@ -321,24 +440,55 @@ console.log(obj.getCount(), obj.getRegularCount());`,
   },
   {
     id: 'quiz-ai-gen',
-    title: 'GenAI, LLMs & Retrieval Augmented Generation (RAG)',
-    description: 'Cutting edge quiz on Vector embeddings, cosine similarity, prompt patterns, hallucinations, and context window management.',
+    title: 'GenAI, LLMs & Retrieval Augmented Generation (RAG) Challenge',
+    description: 'Explore the frontiers of modern AI: Vector databases, chunk overlap optimization, cross-encoder rerankers, cosine similarity, and hallucination reduction.',
     category: 'aiml',
     difficulty: 'Advanced',
     durationMinutes: 15,
     totalMarks: 30,
+    bannerUrl: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&auto=format&fit=crop&q=80',
     reward: {
       prizePool: '₹40,000 Bounty',
+      firstPrize: '₹25,000 + AI Internship',
+      secondPrize: '₹15,000 + Certificate',
       certificate: true,
       badge: 'AI Pioneer',
       fastTrackInterview: true
     },
     status: 'upcoming',
+    entryFee: 'Free',
+    schedule: '25 Sep - 02 Oct 2026',
+    registrationDeadline: '24 Sep 2026, 11:59 PM',
+    eligibility: 'Engineers & Data Science enthusiasts passionate about LLM systems.',
+    rules: [
+      'Registration required prior to the live challenge window opening on 25 September.',
+      'Comprehensive MCQ assessment covering vector search and LLM system architecture.'
+    ],
+    rounds: [
+      {
+        roundNumber: 1,
+        title: 'Generative AI & RAG Theory Assessment',
+        type: 'Online Quiz',
+        duration: '15 Mins',
+        questionsCount: 3,
+        description: 'Evaluate technical mastery of embeddings, reranking, and semantic retrieval pipelines.',
+        status: 'Upcoming'
+      },
+      {
+        roundNumber: 2,
+        title: 'RAG Pipeline Implementation Hack',
+        type: 'Coding Assessment',
+        duration: '48 Hours',
+        description: 'Build an end-to-end question-answering system using vector search and an open-weights LLM.',
+        status: 'Upcoming'
+      }
+    ],
     participantsCount: 1650,
     company: {
       name: 'Neurolink Systems',
       logoText: 'NS',
-      verified: true
+      verified: true,
+      location: 'Noida / Remote'
     },
     tags: ['LLMs', 'RAG', 'Vector DB', 'Embeddings', 'AI'],
     questions: [

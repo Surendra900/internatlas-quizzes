@@ -1,4 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
+
+:root {
+  /* BRAND */
+  --color-primary: #0B1E4A;
+  --color-deep-navy: #091838;
+
+  /* BACKGROUNDS */
+  --color-background: #EFF1F9;
+  --color-white: #FFFFFF;
+  --color-pink-soft: #FFE2EB;
+
+  /* BLUE */
+  --color-blue: #2E58D7;
+  --color-blue-hover: #1C3FA8;
+
+  /* CYAN */
+  --color-cyan: #00CBE8;
+  --color-cyan-light: #7AD9E8;
+
+  /* EDITORIAL */
+  --color-editorial-red: #9A2A2A;
+  --color-pink: #C1205B;
+
+  /* TEXT */
+  --color-text-primary: #0B1E4A;
+  --color-text-secondary: #5B6487;
+  --color-text-muted: #7C849E;
+  --color-text-white: #FFFFFF;
+
+  /* BORDERS */
+  --color-border: #DDE2F0;
+  --color-border-light: #E8EBF4;
+
+  /* SOFT SURFACES */
+  --color-blue-surface: #E7EDFF;
+  --color-cyan-surface: #E8F9FC;
+
+  /* RADIUS */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* SHADOWS */
+  --shadow-card: 0 4px 18px rgba(11, 30, 74, 0.06);
+  --shadow-hover: 0 8px 28px rgba(11, 30, 74, 0.10);
+}
 
 @layer base {
   * {
@@ -6,9 +55,54 @@
   }
   body {
     margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #f8fafc;
-    color: #0f172a;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
     -webkit-font-smoothing: antialiased;
   }
+}
+
+.font-editorial {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-style: italic;
+  color: var(--color-editorial-red);
+}
+
+.card-internatlas {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-internatlas:hover {
+  border-color: var(--color-cyan-light);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-primary-atlas {
+  background-color: var(--color-blue);
+  color: #ffffff;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary-atlas:hover {
+  background-color: var(--color-blue-hover);
+}
+
+.btn-secondary-atlas {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary-atlas:hover {
+  background-color: var(--color-background);
+  border-color: var(--color-blue);
 }
